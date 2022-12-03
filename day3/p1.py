@@ -1,11 +1,11 @@
 
 f = open("puzzle_input.txt", "r")
-puzzle_input = f.read()
+puzzle_input = f.read().split("\n")
 
 priority_sum = 0
 priority_value = lambda it: ord(it) - (96 if(it.islower()) else 38)
 
-for line in puzzle_input.split("\n"):
+for line in puzzle_input:
     middle = len(line) // 2
     first = line[:middle]
     second = line[middle:]

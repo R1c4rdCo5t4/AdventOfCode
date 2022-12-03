@@ -5,8 +5,7 @@
 #   Z -> scissors
 
 f = open("puzzle_input.txt", "r")
-puzzle_input = f.read()
-
+puzzle_input = f.read().split("\n")
 
 play_dict = {
     'A':'X',
@@ -17,7 +16,7 @@ play_dict = {
 winning_plays = [['A','Y'], ['B', 'Z'], ['C', 'X']]
 score = 0
 
-for input_line in puzzle_input.split("\n"):
+for input_line in puzzle_input:
 
     plays = input_line.split(" ")
     opponent_play = plays[0]

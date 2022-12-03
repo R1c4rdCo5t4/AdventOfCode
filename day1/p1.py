@@ -1,10 +1,9 @@
 
 f = open("puzzle_input.txt", "r")
-puzzle_input = f.read()
+puzzle_input = f.read().split("\n\n")
 
-elfs = puzzle_input.split("\n\n")
 max_sum = 0
-for elf in elfs:
+for elf in puzzle_input:
     curr_sum = sum([int(i) for i in elf.split("\n")])
     if curr_sum > max_sum:
         max_sum = curr_sum

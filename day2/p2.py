@@ -6,7 +6,7 @@
 
 
 f = open("puzzle_input.txt", "r")
-puzzle_input = f.read()
+puzzle_input = f.read().split("\n")
 
 
 # outcome: (outcome points, index-based play score)
@@ -17,7 +17,7 @@ possible_plays = {
 }
 
 score = 0
-for input_line in puzzle_input.split("\n"):
+for input_line in puzzle_input:
 
     plays = input_line.split(" ")
     opponent_play = plays[0]
