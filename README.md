@@ -6,8 +6,6 @@ My solutions for the Advent of Code 2022 problems with python. Check it out at h
 <br><br>
 
 ## Overview
-
-Note: To run the algorithms, you must put your puzzle input it in each ```dayxx``` directory accordingly, since the AoC creator prefers that puzzle inputs don't be shared.
 | Day | Name                                                           | Stars |
 | --- | -------------------------------------------------------------- | ----- |
 | 01  | [Calorie Counting](https://adventofcode.com/2022/day/1)        | ⭐⭐    |
@@ -35,3 +33,5 @@ Note: To run the algorithms, you must put your puzzle input it in each ```dayxx`
 | 23  |                                                                |       |
 | 24  |                                                                |       |
 | 25  |                                                                |       |
+
+Note: To run the algorithms, you must put your puzzle input it in each ```dayxx``` directory accordingly, since the AoC creator prefers that puzzle inputs don't be shared.
