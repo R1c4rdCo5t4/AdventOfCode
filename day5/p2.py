@@ -23,7 +23,7 @@ f = open("puzzle_input.txt", "r")
 puzzle_input = f.read().split("\n")
 stacks = get_stacks(puzzle_input)
 
-for move_idx in range(len(stacks)+1, len(puzzle_input)): # iterates through move instructions
+for move_idx in range(len(max(stacks, key=len))+2, len(puzzle_input)): # iterates through move instructions
     move = puzzle_input[move_idx].split(" ")
     _amount, _from, _to = [int(move[i]) for i in range(1, len(move), 2)] # gets instruction list [amount, from, to]
     move_crate(stacks, _amount, _from - 1, _to - 1) # moves crate in stack
@@ -31,4 +31,4 @@ for move_idx in range(len(stacks)+1, len(puzzle_input)): # iterates through move
 
 result = "".join([s[-1] for s in stacks if len(s) > 0]) # joins each element on top of stack in list
 
-print(result) 
+print(result) # TPFFBDRJD
