@@ -16,10 +16,9 @@ def get_stacks(input_lines: list[str]) -> list[chr] | None:
                 
             
 def move_crate(stcks: list[chr], amount:int, src:int, to:int) -> None:
-    stcks[to].extend(stcks[src][-1:-amount-1:-1]) # add sublist to list in reverse order (lifo)
+    stcks[to].extend(stcks[src][-amount:]) # add sublist to list in reverse order (lifo)
     stcks[src] = stcks[src][:-amount] # remove sublist from src
-  
- 
+
 f = open("puzzle_input.txt", "r")
 puzzle_input = f.read().split("\n")
 stacks = list(map(lambda x: list(filter(lambda y: y != ' ', x)), get_stacks(puzzle_input))) # gets stacks and filters empty crates
@@ -32,4 +31,4 @@ for move_idx in range(len(stacks)+1, len(puzzle_input)): # iterates through move
 
 result = "".join([s[-1] for s in stacks if len(s) > 0]) # joins each element on top of stack in list
 
-print(result) # LBLVVTVLP
+print(result) 
