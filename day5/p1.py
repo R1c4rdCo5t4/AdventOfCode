@@ -9,8 +9,8 @@ def get_stacks(input_lines: list[str]) -> list[chr] | None:
             crate = line[i]
             if(crate == '1'): # finished reading stacks
                 stack_list.pop() # remove empty list
-                stck = [list(map(str, col)) for col in zip(*stack_list)] # get stack collumns
-                return [s[::-1] for s in stck] # reverse stack
+                stck = [list(map(str, col))[::-1] for col in zip(*stack_list)] # get stack collumns in reverse order (stack top in the end of list)
+                return list(map(lambda x: list(filter(lambda y: y != ' ', x)), stck)) # gets stacks and filters empty crates   
             
             stack_list[stack_idx].append(crate) # append stack to list
                 
@@ -22,12 +22,12 @@ def move_crate(stcks: list[chr], amount:int, src:int, to:int) -> None:
  
 f = open("puzzle_input.txt", "r")
 puzzle_input = f.read().split("\n")
-stacks = list(map(lambda x: list(filter(lambda y: y != ' ', x)), get_stacks(puzzle_input))) # gets stacks and filters empty crates
+stacks = get_stacks(puzzle_input)
 
 for move_idx in range(len(stacks)+1, len(puzzle_input)): # iterates through move instructions
     move = puzzle_input[move_idx].split(" ")
-    inst = [int(move[i]) for i in range(1, len(move), 2)] # gets instruction list [amount, from, to]
-    move_crate(stacks, inst[0], inst[1]-1, inst[2]-1) # moves crate in stack
+    _amount, _from, _to = [int(move[i]) for i in range(1, len(move), 2)] # gets instruction list [amount, from, to]
+    move_crate(stacks, _amount, _from - 1, _to - 1) # moves crate in stack
     
 
 result = "".join([s[-1] for s in stacks if len(s) > 0]) # joins each element on top of stack in list
