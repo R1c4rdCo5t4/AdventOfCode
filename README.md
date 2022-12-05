@@ -12,7 +12,7 @@ My solutions for the Advent of Code 2022 problems with python. Check it out at h
 | 02  | [Rock Paper Scissors](https://adventofcode.com/2022/day/2)     | ⭐⭐ |
 | 03  | [Rucksack Reorganization](https://adventofcode.com/2022/day/3) | ⭐⭐ |
 | 04  | [Camp Cleanup](https://adventofcode.com/2022/day/4)            | ⭐⭐ | 
-| 05  |                                                                |       |
+| 05  | [Supply Stacks](https://adventofcode.com/2022/day/5)           | ⭐⭐ |
 | 06  |                                                                |       |
 | 07  |                                                                |       |
 | 08  |                                                                |       |
