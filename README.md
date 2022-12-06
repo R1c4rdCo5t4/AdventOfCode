@@ -1,5 +1,5 @@
 # Advent of Code <img src="https://skillicons.dev/icons?i=python"/>
-My solutions for the Advent of Code 2022 problems with python. Check it out at https://adventofcode.com/2022.
+My algorithms for the [Advent Of Code 2022](https://adventofcode.com/2022) coding puzzles with [Python](https://www.python.org/)
 
 <br><br>
 <img src="header.png" width="100%"/>
