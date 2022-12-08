@@ -14,8 +14,8 @@ My algorithms for the [Advent Of Code 2022](https://adventofcode.com/2022) codin
 | 04  | [Camp Cleanup](https://adventofcode.com/2022/day/4)            | ⭐⭐ | 
 | 05  | [Supply Stacks](https://adventofcode.com/2022/day/5)           | ⭐⭐ |
 | 06  | [Tuning Trouble](https://adventofcode.com/2022/day/6)          | ⭐⭐ |
-| 07  |                                                                |       |
-| 08  |                                                                |       |
+| 07  | [No Space Left On Device](https://adventofcode.com/2022/day/7) | ⭐⭐ |
+| 08  | [Treetop Tree House](https://adventofcode.com/2022/day/8)      | ⭐   |
 | 09  |                                                                |       |
 | 10  |                                                                |       |
 | 11  |                                                                |       |
