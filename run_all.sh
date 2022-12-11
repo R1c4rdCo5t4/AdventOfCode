@@ -2,7 +2,7 @@
 
 for i in $(seq -f "%2g" 1 25)
 do
-    DIR="./day_$i"
+    DIR="./day$i"
     if test -d "$DIR";
     then
         cd "$DIR"
