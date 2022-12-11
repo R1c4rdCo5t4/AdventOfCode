@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in $(seq -f "%2g" 1 25)
+for i in $(seq -f "%02g" 1 25)
 do
     DIR="./day$i"
     if test -d "$DIR";
