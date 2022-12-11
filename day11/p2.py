@@ -1,22 +1,24 @@
 from monkeys import *
+from math import lcm
 
 monkeys = parse_input()
 rounds = 10000
-worry_level_div = 1
+lmc = lcm(*[monkey.test for monkey in monkeys])
 
 for _ in range(rounds):
     for monkey in monkeys: # each round
         while len(monkey.items) > 0:
             monkey.operation()
-            if monkey.test_worry_level(worry_level_div):
-                monkeys[monkey.true].items.append(monkey.items[0])
+            monkey.items[0] = monkey.first % lmc
+
+            if monkey.test_worry_level():
+                monkeys[monkey.true].items.append(monkey.first)
             else:
-                monkeys[monkey.false].items.append(monkey.items[0])
+                monkeys[monkey.false].items.append(monkey.first)
 
             monkey.inspect_count += 1
             monkey.items = monkey.items[1:]
 
 
-two_most_active = sorted(monkeys, key=lambda m: m.inspect_count, reverse=True)[:2]
-monkey_business = two_most_active[0].inspect_count * two_most_active[1].inspect_count
-print(monkey_business)
+monkey_business = Monkey.get_monkey_business(monkeys)
+print(monkey_business) # 20151213744

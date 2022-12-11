@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 
-
 @dataclass
 class Monkey:
     id: int
@@ -10,19 +9,27 @@ class Monkey:
     true: int
     false: int
     inspect_count: int = 0
+
+    @property
+    def first(self) -> int:
+        return self.items[0]
    
-    def test_worry_level(self, div:int) -> bool:
-        self.items[0] //= div
-        return self.items[0] % self.test == 0
+    def test_worry_level(self) -> bool:
+        return (self.first % self.test) == 0
    
     def operation(self) -> int:
         op, value = self.op.split(" ")
-        old = self.items[0]
+        old = self.first
         operand = old if (value == "old") else int(value)
         result = old + operand if(op == '+') else old * operand
         self.items[0] = result
         return result
-        
+
+    @staticmethod
+    def get_monkey_business(monkeys):
+        two_most_active = sorted(monkeys, key=lambda m: m.inspect_count, reverse=True)[:2]
+        monkey_business = two_most_active[0].inspect_count * two_most_active[1].inspect_count
+        return monkey_business
 
 
 def parse_input() -> list[Monkey] :
@@ -32,7 +39,6 @@ def parse_input() -> list[Monkey] :
 
     for monkey in monkey_lines:
         each = monkey.split("\n")
-
         id = each[0][7:].rstrip(":")
         starting_items = [int(it) for it in each[1][18:].split(", ")]
         operation =  each[2][23:]
