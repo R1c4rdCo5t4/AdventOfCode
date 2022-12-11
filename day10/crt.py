@@ -15,8 +15,8 @@ def parse_input() -> list[Operation]:
             else Operation(inst[0], None) for line in lines]
 
 
-def check_signal_strength(cycles: int, register:int) -> int:
-    if cycles == 20 or ((cycles+20) % 40) == 0:
+def get_signal_strength(cycles: int, register:int) -> int:
+    if cycles == 20 or ((cycles + 20) % 40) == 0:
         return cycles * register
 
     return 0
@@ -27,7 +27,6 @@ def check_new_line(cycles: int) -> bool:
     
         
 def shift_chars(string:str, amount:int):
-
     sign = -int(copysign(1, amount))
     for _ in range(abs(amount)):
         string = string[sign:] + string[:sign]

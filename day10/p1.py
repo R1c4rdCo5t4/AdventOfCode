@@ -6,12 +6,9 @@ cycles = 0
 signal_strength_sum = 0
 
 def clock_cycle():
-    global cycles
-    global signal_strength_sum
-    global register
-    
+    global cycles, signal_strength_sum, register
     cycles += 1
-    signal_strength_sum += check_signal_strength(cycles, register)
+    signal_strength_sum += get_signal_strength(cycles, register)
 
 
 for op in ops:

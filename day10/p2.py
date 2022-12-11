@@ -8,10 +8,7 @@ crt_screen = ""
 sprite = "###....................................."
 
 def clock_cycle():
-    global cycle
-    global crt_screen
-    global crt_pos
-
+    global cycle, crt_screen, crt_pos
     cycle += 1
     crt_screen += sprite[crt_pos]
     crt_pos += 1
@@ -26,7 +23,6 @@ for op in ops:
 
     if op.name == "addx":
         clock_cycle()
-
         register += op.value
         sprite = shift_chars(sprite, op.value)
         
