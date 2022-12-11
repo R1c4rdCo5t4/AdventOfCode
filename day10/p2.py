@@ -1,11 +1,5 @@
 from crt import *
 
-ops = parse_input()
-register = 1
-cycle = 0
-crt_pos = 0
-crt_screen = ""
-sprite = "###....................................."
 
 def clock_cycle():
     global cycle, crt_screen, crt_pos
@@ -17,6 +11,12 @@ def clock_cycle():
         crt_screen += "\n"
         crt_pos = 0
 
+ops = parse_input()
+register = 1
+cycle = 0
+crt_pos = 0
+crt_screen = ""
+sprite = "###....................................."
 
 for op in ops:
     clock_cycle()

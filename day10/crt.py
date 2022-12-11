@@ -1,17 +1,19 @@
 from dataclasses import dataclass
 from math import copysign
 
+
 @dataclass
 class Operation:
     name : str
-    value : int
+    value : int | None
 
 
 def parse_input() -> list[Operation]:
     f = open("puzzle_input.txt", "r")
     lines = f.read().splitlines()
 
-    return [Operation(inst[0], int(inst[1])) if(inst := line.split(" "))[0] == "addx" 
+    return [Operation(inst[0], int(inst[1])) 
+            if(inst := line.split(" "))[0] == "addx" 
             else Operation(inst[0], None) for line in lines]
 
 

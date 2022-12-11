@@ -1,5 +1,5 @@
 
-# Strategy Guide:
+# strategy guide:
 #   X -> lose
 #   Y -> draw
 #   Z -> win

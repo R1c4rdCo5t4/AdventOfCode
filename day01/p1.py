@@ -8,6 +8,4 @@ for elf in puzzle_input:
     if curr_sum > max_sum:
         max_sum = curr_sum
 
-
 print(max_sum) # 72240
-

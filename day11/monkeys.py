@@ -2,7 +2,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Monkey:
-    id: int
     items: list[int]
     op: str
     test: int
@@ -39,14 +38,13 @@ def parse_input() -> list[Monkey] :
 
     for monkey in monkey_lines:
         each = monkey.split("\n")
-        id = each[0][7:].rstrip(":")
         starting_items = [int(it) for it in each[1][18:].split(", ")]
         operation =  each[2][23:]
         test = int(each[3][21:])
         true = int(each[4][29:])
         false = int(each[5][30:])
 
-        monkeys.append(Monkey(id, starting_items, operation, test, true, false))
+        monkeys.append(Monkey(starting_items, operation, test, true, false))
         
     return monkeys
 

@@ -23,7 +23,7 @@ def update_tail(head: tuple[int, int], tail: tuple[int, int]) -> tuple[int, int]
     if abs(dx) <= 1 and abs(dy) <= 1: # head and tail are already adjacent, dont move tail
         return tail
     
-    new_tail_pos = (tail[0] + math.copysign(1, dx), tail[1] + math.copysign(1, dy))
+    new_tail_pos = (int(tail[0] + math.copysign(1, dx)), int(tail[1] + math.copysign(1, dy)))
 
     if dx == 0: # moving along the x-axis
         return (tail[0], new_tail_pos[1])

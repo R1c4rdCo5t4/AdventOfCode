@@ -10,7 +10,7 @@ for _ in range(rounds):
             monkey.items[0] //= 3
 
             if monkey.test_worry_level():
-                monkeys[monkey.true].items.append(monkey.first)
+                monkeys[monkey.true].items.append(monkey.first) 
             else:
                 monkeys[monkey.false].items.append(monkey.first)
 

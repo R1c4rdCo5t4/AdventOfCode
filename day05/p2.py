@@ -1,4 +1,4 @@
-from stacks import parse_stacks, rearrange_stacks, get_stack_tops
+from stacks import *
 
 def move_crates(stcks: list[chr], amount:int, src:int, to:int) -> None:
     stcks[to].extend(stcks[src][-amount:]) # add sublist to list in reverse order (lifo)

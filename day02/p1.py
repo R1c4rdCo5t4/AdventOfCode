@@ -1,5 +1,5 @@
 
-# Strategy Guide:
+# strategy guide:
 #   X -> rock
 #   Y -> paper
 #   Z -> scissors
