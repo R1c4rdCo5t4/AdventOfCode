@@ -1,15 +1,15 @@
 from monkeys import *
-from math import lcm
+import math
 
 monkeys = parse_input()
 rounds = 10000
-lmc = lcm(*[monkey.test for monkey in monkeys])
+lcm = math.lcm(*[monkey.test for monkey in monkeys])
 
 for _ in range(rounds):
     for monkey in monkeys: # each round
         while len(monkey.items) > 0:
             monkey.operation()
-            monkey.items[0] = monkey.first % lmc
+            monkey.items[0] = monkey.first % lcm
 
             if monkey.test_worry_level():
                 monkeys[monkey.true].items.append(monkey.first)
