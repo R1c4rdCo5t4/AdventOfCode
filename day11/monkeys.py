@@ -8,14 +8,17 @@ class Monkey:
     true: int
     false: int
     inspect_count: int = 0
+    monkeys = list["Monkey"]
 
     @property
     def first(self) -> int:
         return self.items[0]
    
+    @property
     def test_worry_level(self) -> bool:
         return (self.first % self.test) == 0
    
+
     def operation(self) -> int:
         op, value = self.op.split(" ")
         old = self.first
@@ -24,11 +27,22 @@ class Monkey:
         self.items[0] = result
         return result
 
+
+    def throw(self) -> None:
+        self.inspect_count += 1
+        target_monkey = self.true if self.test_worry_level else self.false
+        self.monkeys[target_monkey].items.append(self.first) 
+        self.items = self.items[1:]
+        
+
     @staticmethod
-    def get_monkey_business(monkeys):
-        two_most_active = sorted(monkeys, key=lambda m: m.inspect_count, reverse=True)[:2]
+    def get_monkey_business():
+        two_most_active = sorted(Monkey.monkeys, key=lambda m: m.inspect_count, reverse=True)[:2]
         monkey_business = two_most_active[0].inspect_count * two_most_active[1].inspect_count
         return monkey_business
+
+  
+
 
 
 def parse_input() -> list[Monkey] :

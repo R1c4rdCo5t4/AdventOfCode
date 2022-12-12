@@ -1,24 +1,16 @@
 from monkeys import *
 import math
 
-monkeys = parse_input()
+Monkey.monkeys = parse_input()
 rounds = 10000
-lcm = math.lcm(*[monkey.test for monkey in monkeys])
+lcm = math.lcm(*[monkey.test for monkey in Monkey.monkeys])
 
 for _ in range(rounds):
-    for monkey in monkeys: # each round
+    for monkey in Monkey.monkeys: # each round
         while len(monkey.items) > 0:
             monkey.operation()
             monkey.items[0] = monkey.first % lcm
+            monkey.throw()
 
-            if monkey.test_worry_level():
-                monkeys[monkey.true].items.append(monkey.first)
-            else:
-                monkeys[monkey.false].items.append(monkey.first)
-
-            monkey.inspect_count += 1
-            monkey.items = monkey.items[1:]
-
-
-monkey_business = Monkey.get_monkey_business(monkeys)
+monkey_business = Monkey.get_monkey_business()
 print(monkey_business) # 20151213744
