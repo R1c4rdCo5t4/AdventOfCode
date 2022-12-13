@@ -19,8 +19,8 @@ My algorithms for the [Advent Of Code 2022](https://adventofcode.com/2022) codin
 | 09  | [Rope Bridge](https://adventofcode.com/2022/day/9)             | ⭐⭐ |
 | 10  | [Cathode-Ray Tube](https://adventofcode.com/2022/day/10)       | ⭐⭐ |
 | 11  | [Monkey in the Middle](https://adventofcode.com/2022/day/11)   | ⭐⭐ |
-| 12  |                                                                |       |
-| 13  |                                                                |       |
+| 12  | [Hill Climbing Algorithm](https://adventofcode.com/2022/day/12)| ⭐⭐ |
+| 13  | [Distress Signal](https://adventofcode.com/2022/day/13)        | ⭐⭐ |
 | 14  |                                                                |       |
 | 15  |                                                                |       |
 | 16  |                                                                |       |
