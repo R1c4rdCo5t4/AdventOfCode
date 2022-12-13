@@ -25,7 +25,7 @@ def parse_list(line: str) -> list:
     depth = 0
 
     def add_sublist(start, end):
-        result.append(parse_list(s[start:end]))
+        result.append(parse_list(line[start:end]))
 
     for idx in range(1, len(line) - 1):
         match line[idx]:
