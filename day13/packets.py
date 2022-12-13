@@ -4,6 +4,14 @@ def parse_input() -> list[str]:
     f = open("puzzle_input.txt", "r")
     return f.read().splitlines()
 
+def parse_packets(lines: list[str]) -> list[list]:
+    packets = []
+    for line in lines:
+        if(line != ""):
+            packets.append(parse_list(line))
+        
+    return packets
+
 
 def parse_list(s):
     if not s:
@@ -34,14 +42,10 @@ def parse_list(s):
     return result
 
 
-def parse_lists(lines: list[str]) -> list[tuple[list,list]]:
-    return [(parse_list(lines[idx]), parse_list(lines[idx+1])) for idx in range(0, len(lines), 3)]
-
-
 def cmp_lists(left: list, right: list) -> int:
-    for cmp_val in map(cmp_values, left, right):
-        if cmp_val:
-            return cmp_val
+    for val in map(cmp_values, left, right):
+        if val:
+            return val
     return cmp_values(len(left), len(right))
 
 
@@ -53,9 +57,3 @@ def cmp_values(left: int | list, right: int | list) -> int:
         case list(), int(): return cmp_values(left, [right])
         case list(), list(): return cmp_lists(left, right)
 
-    
-
-
-
-
-        
