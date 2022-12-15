@@ -50,45 +50,45 @@ class Simulation:
     start: position
     rocks: list[position]
     sand: list[position] = field(default_factory=list)
-    offset : tuple[int, int] = (1,1)
-    directions: list[position] = [(0, 1), (-1, 1), (1, 1)]
+    offset = (1,1)
+    directions = ((0, 1), (-1, 1), (1, 1))
 
     @property
     def width(self):
-        return get_value(max, self.rocks, 1) + 1
-
-    @property
-    def height(self):
         return get_value(max, self.rocks, 0) + 1
 
     @property
+    def height(self):
+        return get_value(max, self.rocks, 1) + 1
+
+    @property
     def min_x(self):
-        return get_value(min, self.rocks, 1)
+        return get_value(min, self.rocks, 0)
         
     @property
     def min_y(self):
-        return get_value(min, self.rocks, 0)
+        return get_value(min, self.rocks, 1)
     
     @property
     def relative_height(self):
-        return self.height - self.min_y + self.offset[0]
+        return self.height + self.offset[1]
 
     @property
     def relative_width(self):
-        return self.width + self.offset[1]
+        return self.width - self.min_x + self.offset[0]
 
 
     def get_position(self, x:int, y:int) -> position:
-        return (x+self.min_y, y)
+        return (x+self.min_x, y)
 
 
     def visualize(self):
         # print("\033[2J") # clear screen
         print("\033[H") # move cursor to the top-left
 
-        for y in range(self.relative_width):
+        for y in range(self.relative_height):
             print('.', end="")
-            for x in range(self.relative_height):
+            for x in range(self.relative_width):
                 pos = self.get_position(x,y)
                 char = '.'
                 if(pos == self.start):
@@ -98,10 +98,10 @@ class Simulation:
                 elif(pos in self.sand):
                     char = 'O'
                 
-                print(char, end='\n' if x == self.relative_height-1 else '')
+                print(char, end='\n' if x == self.relative_width-1 else '')
        
          
-    # run until sand falls into the void
+    # counts rest sand units until one falls into the void
     def simulate_p1(self):
         sand_units = 0
 
@@ -110,7 +110,7 @@ class Simulation:
             self.sand.append(curr_pos)
    
             while True:
-                if curr_pos[1] >= self.width:
+                if curr_pos[1] >= self.height:
                     return sand_units
                     
                 for dx, dy in self.directions:
@@ -126,10 +126,10 @@ class Simulation:
                     break
                    
                 self.visualize()
-                
+                # sleep(0.01)
       
      
-    # runs until sand overflow, with infinitely wider ground
+    # counts rest sand units until overflow, with infinitely wider ground
     def simulate_p2(self):
         sand_units = 0
 
@@ -144,10 +144,7 @@ class Simulation:
             if all(x in self.sand for x in [left,middle,right]): # overflow
                 return sand_units + 1
 
-            while  True:
-                if curr_pos[1] >= self.width:
-                    return sand_units
-                    
+            while True:
                 for dx, dy in self.directions:
                     next_pos = (curr_pos[0] + dx, curr_pos[1] + dy)
                     if not any(next_pos in pos for pos in [self.rocks, self.sand]):
@@ -160,10 +157,10 @@ class Simulation:
                     sand_units += 1
                     break
                    
-                if (curr_pos[1] >= self.width): # floor
+                if (curr_pos[1] >= self.height): # floor
                     self.sand[sand_units] = curr_pos
                     sand_units += 1
                     break
                    
                 self.visualize()
-                sleep(2)
+                # sleep(0.01)
