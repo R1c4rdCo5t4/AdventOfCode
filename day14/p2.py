@@ -1,4 +1,4 @@
-from simulation import *
+from sand import *
 
 
 rocks = parse_rocks()
