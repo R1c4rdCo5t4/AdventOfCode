@@ -21,7 +21,7 @@ class Sensor:
         self.closest_beacon = Position(bx, by)
 
     @property
-    def dist_to_closest_beacon(self):
+    def dist_to_closest_beacon(self) -> int:
         return manhattan_dist(self.pos, self.closest_beacon)
 
 
@@ -36,8 +36,35 @@ def parse_sensors():
     sensors = []
 
     for line in lines:
-        x1, y1, x2, y2 = map(int, re.findall(r"\d+", line))
+        x1, y1, x2, y2 = map(int, re.findall(r"-?\d+", line))
         sensors.append(Sensor(x1, y1, x2, y2))
 
     return sensors
 
+
+
+def calc_edge_range(sensor: Sensor, row: int) -> tuple[int, int]:
+    sx, sy = sensor.pos
+    diff =  sensor.dist_to_closest_beacon - abs(row - sy)
+    if diff < 0: # the beacon isnt within the sensor's range in the row
+        return None
+
+    return sx-diff, sx+diff
+    
+
+def detect_edges(sensors: list[Sensor], row: int) -> list[tuple[int, int]]:
+    all_edges = [calc_edge_range(sensor, row) for sensor in sensors]
+    return sorted([edge for edge in all_edges if edge is not None])
+
+
+
+def find_gap(edges):
+    highest = 0
+    
+    for a, b in edges:
+        if a <= highest + 1:
+            highest = max(b, highest)
+        else:
+            return a - 1
+            
+    return None
