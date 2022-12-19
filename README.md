@@ -25,7 +25,7 @@ My algorithms for the [Advent Of Code 2022](https://adventofcode.com/2022) codin
 | 15  | [Beacon Exclusion Zone](https://adventofcode.com/2022/day/15)  | ⭐⭐ |
 | 16  | [Proboscidea Volcanium](https://adventofcode.com/2022/day/16)  |       |
 | 17  | [Pyroclastic Flow](https://adventofcode.com/2022/day/17)       | ⭐   |
-| 18  |                                                                |       |
+| 18  | [Boiling Boulders](https://adventofcode.com/2022/day/18)       | ⭐   |
 | 19  |                                                                |       |
 | 20  |                                                                |       |
 | 21  |                                                                |       |

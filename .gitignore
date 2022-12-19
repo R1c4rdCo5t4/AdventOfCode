@@ -130,3 +130,6 @@ dmypy.json
 
 # Puzzle input text file
 puzzle_input.txt
+
+# VSCode folder
+.vscode
