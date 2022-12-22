@@ -1,21 +1,16 @@
-
-def parse_input() -> list[str]:
-    f = open("puzzle_input.txt", "r")
-    return f.read().splitlines()
-
-def are_adjacent(pos1, pos2):
-    return (abs(pos1[0] - pos2[0]) + abs(pos1[1] - pos2[1]) + abs(pos1[2] - pos2[2])) == 1
+from droplets import *
 
 
-lines = parse_input()
+cubes = parse_cubes()
+
 surface_area = 0
 
-for idx, line in enumerate(lines):
-    x1, y1, z1 = map(int, line.split(","))
+for idx, cube in enumerate(cubes):
+    x1, y1, z1 = cube
     curr_area = 6
     
-    for next_line in lines[idx:]:
-        x2, y2, z2 = map(int, next_line.split(","))
+    for next_cube in cubes[idx:]:
+        x2, y2, z2 = next_cube
         if are_adjacent((x1,y1,z1), (x2,y2,z2)):
             curr_area -= 2
         
