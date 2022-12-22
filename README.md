@@ -28,7 +28,7 @@ My algorithms for the [Advent Of Code 2022](https://adventofcode.com/2022) codin
 | 18  | [Boiling Boulders](https://adventofcode.com/2022/day/18)         | ⭐   |
 | 19  | [Not Enough Minerals](https://adventofcode.com/2022/day/19)      |       |
 | 20  | [Grove Positioning System](https://adventofcode.com/2022/day/20) | ⭐⭐ |
-| 21  | [Monkey Math](https://adventofcode.com/2022/day/21)              | ⭐   |
+| 21  | [Monkey Math](https://adventofcode.com/2022/day/21)              | ⭐⭐ |
 | 22  |                                                                  |       |
 | 23  |                                                                  |       |
 | 24  |                                                                  |       |
