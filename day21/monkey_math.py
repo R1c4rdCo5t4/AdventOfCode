@@ -1,9 +1,12 @@
+from sympy import parse_expr
+
 
 def parse_input():
-    monkey_dict = {}
     f = open("puzzle_input.txt", "r")
     lines = f.read().splitlines()
-    
+    f.close()
+
+    monkey_dict = {}
     for line in lines:
         sp = line.split(" ")
         monkey = sp[0][:-1]
@@ -14,16 +17,22 @@ def parse_input():
 
 
 
-def calculate(monkeys: dict[str, int | list], monkey: str, operation: list[str]) -> None:
+def calculate(monkey: str, monkeys:dict[str, int | list], humn):
+    if monkey == "humn":
+        return humn
+
+    if type(monkeys[monkey]) is int:
+        return monkeys[monkey]
+
+    operation = monkeys[monkey]
     first, op, second = operation
+
+    left = calculate(first, monkeys, humn)
+    right = calculate(second, monkeys, humn)
+
+    return parse_expr(f"({left}){op}({right})")
+
     
-    if type(monkeys[first]) is int and type(monkeys[second]) is int: # has values, can perform calculation
-        first = int(monkeys[first])
-        second = int(monkeys[second])
-  
-        match(op):
-            case '+': monkeys[monkey] = first + second
-            case '-': monkeys[monkey] = first - second
-            case '*': monkeys[monkey] = first * second
-            case '/': monkeys[monkey] = first // second
+ 
+
         
