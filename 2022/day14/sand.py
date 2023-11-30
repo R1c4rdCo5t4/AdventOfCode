@@ -44,7 +44,6 @@ class Simulation:
     offset = (1,1)
     directions = ((0, 1), (-1, 1), (1, 1))
 
-
     @property
     def width(self):
         return max(self.rocks, key=lambda k: k[0])[0] +1
@@ -65,11 +64,9 @@ class Simulation:
     def relative_width(self):
         return self.width - self.min_x + self.offset[0]
 
-
     def get_position(self, x:int, y:int) -> position:
         return (x+self.min_x, y)
 
-     
     # counts rest sand units until one falls into the void
     def simulate_p1(self):
         sand_units = 0
@@ -93,8 +90,7 @@ class Simulation:
                     break
                    
                 # self.visualize()
-                # sleep(0.1)
-      
+
      
     # counts rest sand units until overflow, with infinitely wider ground
     def simulate_p2(self):
@@ -123,13 +119,10 @@ class Simulation:
                         return sand_units
                     break
                 
-
                 # self.visualize()
-                # sleep(0.01)
-
-
 
     def visualize(self):
+        sleep(0.05)
         # print("\033[2J") # clear screen
         print("\033[H") # move cursor to the top-left
 
