@@ -2,7 +2,6 @@ with open("puzzle_input.txt") as file:
     lines = file.read().splitlines()
 
 digits_dict: dict[str, int] = {
-    "zero": 0,
     "one": 1,
     "two": 2,
     "three": 3,
