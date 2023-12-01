@@ -8,7 +8,7 @@ My algorithms for the [Advent Of Code 2023](https://adventofcode.com/2023) codin
 ## Overview
 | Day | Name                                                             | Stars |
 | --- | ---------------------------------------------------------------- | ----- |
-| 01  |                                                                  |       |
+| 01  | [Trebuchet?!](https://adventofcode.com/2023/day/1)               | ⭐⭐ |
 | 02  |                                                                  |       |
 | 03  |                                                                  |       |
 | 04  |                                                                  |       | 
