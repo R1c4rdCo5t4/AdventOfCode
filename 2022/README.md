@@ -1,9 +1,7 @@
 # Advent of Code <img src="https://skillicons.dev/icons?i=python"/>
-My algorithms for the [Advent Of Code 2022](https://adventofcode.com/2022) coding puzzles with [Python](https://www.python.org/)
+My solutions for the [Advent Of Code 2022](https://adventofcode.com/2022) coding puzzles with [Python](https://www.python.org/)
 
-<br><br>
-<img src="header.png" width="100%"/>
-<br><br>
+<img src="header.png" height="200px"/>
 
 ## Overview
 | Day | Name                                                             | Stars |
