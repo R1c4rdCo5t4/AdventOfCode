@@ -2,10 +2,6 @@
 
 My solutions for the [Advent Of Code](https://adventofcode.com) coding puzzles with [Python](https://www.python.org/)
 
-<div style="display: flex; justify-content: left;">
-
-<div>
-
 ## Statistics
 | Year | Stars  |
 | ---- | ------ |
@@ -21,10 +17,4 @@ My solutions for the [Advent Of Code](https://adventofcode.com) coding puzzles w
 
 Total Stars: 38 ⭐
 
-</div>
-
-<div>
-<img src="./advent_tree.png" width="350px" style="margin-left: 100px;">
-</div>
-
-</div>
+<img src="./advent_of_code.png">
