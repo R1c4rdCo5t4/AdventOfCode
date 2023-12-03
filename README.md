@@ -13,8 +13,8 @@ My solutions for the [Advent Of Code](https://adventofcode.com) coding puzzles w
 | 2020 | 0 ⭐  |
 | 2021 | 2 ⭐  |
 | 2022 | 36 ⭐ |
-| 2023 | 5 ⭐  |
+| 2023 | 6 ⭐  |
 
-Total Stars: 43 ⭐
+Total Stars: 44 ⭐
 
 <img src="./advent_of_code.png">

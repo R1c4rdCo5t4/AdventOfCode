@@ -3,7 +3,7 @@ with open("puzzle_input.txt", "r") as f:
     lines = f.read().splitlines()
 
 def is_symbol(char: str | None) -> bool:
-    return char != None and char != '.' and (not char.isdigit())
+    return char != None and char != '.' and not char.isdigit()
 
 result = 0
 num_str = ''
