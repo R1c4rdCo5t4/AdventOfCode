@@ -15,5 +15,5 @@ with open("puzzle_input.txt") as f:
         count = num_count[num] if num in num_count.keys() else 0
         result += num * count
 
-    print(result)
+    print(result) # 21024792
 

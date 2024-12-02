@@ -7,5 +7,5 @@ with open("puzzle_input.txt") as f:
     for i in range(0, len(fst_list)):
         result += abs(fst_list[i] - snd_list[i])
 
-    print(result)
+    print(result) # 1879048
 
