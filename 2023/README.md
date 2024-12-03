@@ -1,7 +1,7 @@
 # Advent of Code <img src="https://skillicons.dev/icons?i=python"/>
 My solutions for the [Advent Of Code 2023](https://adventofcode.com/2023) coding puzzles with [Python](https://www.python.org/)
 
-<img src="header.png" height="200px"/>
+<img src="../header.png" height="200px"/>
 
 ## Overview
 | Day | Name                                                             | Stars |
