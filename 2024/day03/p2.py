@@ -5,9 +5,9 @@ with open("puzzle_input.txt") as f:
     num1, num2 = "", ""
     fetch = False
     do = True
-    mul_len = len("mul(")
-    do_len = len("do()")
-    dont_len = len("don't()")
+    mul_str = "mul("
+    do_str = "do()"
+    dont_str = "don't()"
     result = 0
     i = 0
     while i < len(text):
@@ -17,17 +17,17 @@ with open("puzzle_input.txt") as f:
             fetch, num1, num2, mul = fetching(char, num1, num2)
             result += mul
 
-        if text[i:i+mul_len] == "mul(":    
+        if text[i:i+len(mul_str)] == mul_str:    
             fetch = True
-            i += mul_len
+            i += len(mul_str)
 
-        elif text[i:i+dont_len] == "don't()":
+        elif text[i:i+len(dont_str)] == dont_str:
             do = False
-            i += dont_len
+            i += len(dont_str)
 
-        elif text[i:i+do_len] == "do()":
+        elif text[i:i+len(do_str)] == do_str:
             do = True
-            i += do_len
+            i += len(do_str)
 
         else:
             i += 1
