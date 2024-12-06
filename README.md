@@ -14,8 +14,8 @@ My solutions for the [Advent Of Code](https://adventofcode.com) coding puzzles w
 | 2021 | 2 ⭐  |
 | 2022 | 36 ⭐ |
 | 2023 | 8 ⭐  |
-| 2024 | 10 ⭐ |
+| 2024 | 12 ⭐ |
 
-Total Stars: 56 ⭐
+Total Stars: 58 ⭐
 
 <img src="./advent_of_code.png">
